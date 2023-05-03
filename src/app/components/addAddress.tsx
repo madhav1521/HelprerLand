@@ -109,14 +109,14 @@ function AddAddress(props:any) {
         if(error.length == 0){
 
             let user=JSON.parse(localStorage.getItem('user')|| '{}')
-            fetch(`http://localhost:3001/user?q=${user.Email}`,{
+            fetch(`http://localhost:5000/user?q=${user.Email}`,{
             method:"GET",
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
               },
             }).then(res=>res.json()).then(res =>{
                 let data={...formdata,"userId":res[0].id}
-                fetch("http://localhost:3001/Address",{
+                fetch("http://localhost:5000/Address",{
                     method:"POST",
                     headers: {
                         "Content-type": "application/json; charset=UTF-8"
@@ -141,7 +141,7 @@ function AddAddress(props:any) {
 
         // if(error.length == 0){
         //     let data={...formdata,"userId":userId}
-        //     fetch("http://localhost:3001/Address",{
+        //     fetch("http://localhost:5000/Address",{
         //         method:"POST",
         //         headers: {
         //             "Content-type": "application/json; charset=UTF-8"

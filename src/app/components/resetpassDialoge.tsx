@@ -53,7 +53,7 @@ function Resetpass(props:any) {
                 
                 if(formdata.Password != "" && formdata.CPassword != "" && formdata.Password == formdata.CPassword){
                     let a=({token:props.token,NewPassword:formdata.Password})
-                    fetch(`http://localhost:3001/account/validateResetPasswordLink/`,{
+                    fetch(`http://localhost:5000/account/validateResetPasswordLink/`,{
                         method:"POST",
                         headers: {
                             "Content-type": "application/json; charset=UTF-8"
@@ -76,7 +76,7 @@ function Resetpass(props:any) {
                 }
                 // if(error.length == 0){
                 //     let data={...formdata}
-                //     fetch(`http://localhost:3001/user?q=${data.Email}`,{
+                //     fetch(`http://localhost:5000/user?q=${data.Email}`,{
                 //         method:"GET",
                 //         headers: {
                 //             "Content-type": "application/json; charset=UTF-8"

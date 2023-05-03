@@ -108,7 +108,7 @@ function ManagementTable() {
     id:""
   })
   useEffect(()=>{
-      fetch(`http://localhost:3001/user?userTypeId=${0}&userTypeId=${1}`,{
+      fetch(`http://localhost:5000/user?userTypeId=${0}&userTypeId=${1}`,{
       method:"GET",
       headers: {
          "Content-type": "application/json; charset=UTF-8"
@@ -123,7 +123,7 @@ function ManagementTable() {
 
     const active=()=>{
         let a={status:"Active"}
-        fetch(`http://localhost:3001/user/${Status.id}`,{
+        fetch(`http://localhost:5000/user/${Status.id}`,{
           method:"PATCH",
           headers: {"Content-type": "application/json; charset=UTF-8"},
           body:JSON.stringify(a)
@@ -135,7 +135,7 @@ function ManagementTable() {
       }
       const deactivate=()=>{
         let a={status:"Inactive"}
-        fetch(`http://localhost:3001/user/${Status.id}`,{
+        fetch(`http://localhost:5000/user/${Status.id}`,{
           method:"PATCH",
           headers: {"Content-type": "application/json; charset=UTF-8"},
           body:JSON.stringify(a)

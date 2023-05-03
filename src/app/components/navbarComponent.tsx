@@ -38,7 +38,7 @@ function NavbarComponent(props:any) {
             <nav className={navbar ? 'navbar active' : 'navbar'}>
                 <img src={logolarge} alt="logo" className="logo"/>
                 <ul className="topnav" >
-                  <Link to="/bookservice"><li><Button title="Book a cleaner" className="cleaner-btn">Book a cleaner</Button></li></Link>
+                  <Link to="/bookservice"><li><Button title="Book a cleaner" className="cleaner-btn">Book a worker</Button></li></Link>
                         
                     <li><Link to="/prices">Prices</Link></li>
                     {/* <li><Link to="/prices">Our Guarantee</Link></li> */}

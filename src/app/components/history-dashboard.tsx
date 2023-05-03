@@ -224,14 +224,14 @@ function HDashboard() {
   useEffect(()=>{
     let user=JSON.parse(localStorage.getItem('user')|| '{}')
     // console.log("useeffect call:"+calluse)
-    fetch(`http://localhost:3001/user?q=${user.Email}`,{
+    fetch(`http://localhost:5000/user?q=${user.Email}`,{
     method:"GET",
     headers: {
         "Content-type": "application/json; charset=UTF-8"
       },
     }).then(res=>res.json()).then(res =>{
                 let a=res[0].id
-                fetch(`http://localhost:3001/Bookservice?userId=${a}&status=${""}&status=${"Accepted"}`,{
+                fetch(`http://localhost:5000/Bookservice?userId=${a}&status=${""}&status=${"Accepted"}`,{
                 method:"GET",
                 headers: {
                    "Content-type": "application/json; charset=UTF-8"
@@ -249,7 +249,7 @@ function HDashboard() {
   // const reschedule =()=>{
   //       let a={Date:data.Date,Time:data.Time,datetime:time}
   //       console.log("sp:",data.SPemail)
-  //       fetch(`http://localhost:3001/Bookservice/${data.id}`,{
+  //       fetch(`http://localhost:5000/Bookservice/${data.id}`,{
   //           method:"PATCH",
   //           headers: {
   //               "Content-type": "application/json; charset=UTF-8"
@@ -500,7 +500,7 @@ function HDashboard() {
                       // console.log("sp:",data.SPemail)
                       if(data.SPemail)
                       {
-                        fetch(`http://localhost:3001/Bookservice?SPemail=${data.SPemail}&status=${"Accepted"}`,{
+                        fetch(`http://localhost:5000/Bookservice?SPemail=${data.SPemail}&status=${"Accepted"}`,{
                         method:"GET",
                         headers: {
                             "Content-type": "application/json; charset=UTF-8"
@@ -540,7 +540,7 @@ function HDashboard() {
                               }
                               else
                               {
-                                fetch(`http://localhost:3001/Bookservice/${data.id}`,{
+                                fetch(`http://localhost:5000/Bookservice/${data.id}`,{
                                   method:"PATCH",
                                   headers: {
                                       "Content-type": "application/json; charset=UTF-8"
@@ -554,7 +554,7 @@ function HDashboard() {
                               }
                             }
                             else{
-                              fetch(`http://localhost:3001/Bookservice/${data.id}`,{
+                              fetch(`http://localhost:5000/Bookservice/${data.id}`,{
                               method:"PATCH",
                               headers: {
                                   "Content-type": "application/json; charset=UTF-8"
@@ -571,7 +571,7 @@ function HDashboard() {
                           else
                           {
                             console.log("else object call")
-                            fetch(`http://localhost:3001/Bookservice/${data.id}`,{
+                            fetch(`http://localhost:5000/Bookservice/${data.id}`,{
                               method:"PATCH",
                               headers: {
                                   "Content-type": "application/json; charset=UTF-8"
@@ -590,7 +590,7 @@ function HDashboard() {
                       }
                       else
                       {   
-                        fetch(`http://localhost:3001/Bookservice/${data.id}`,{
+                        fetch(`http://localhost:5000/Bookservice/${data.id}`,{
                         method:"PATCH",
                         headers: {
                             "Content-type": "application/json; charset=UTF-8"
@@ -621,7 +621,7 @@ function HDashboard() {
                     <CButton1 style={{width:"100px",marginTop:"10px"}} onClick={()=>{
                       setcall(!calluse)
                       let a={status:"Cancelled"}
-                      fetch(`http://localhost:3001/Bookservice/${data.id}`,{
+                      fetch(`http://localhost:5000/Bookservice/${data.id}`,{
                       method:"PATCH",
                       headers: {
                         "Content-type": "application/json; charset=UTF-8"

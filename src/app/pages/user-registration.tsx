@@ -127,7 +127,7 @@ function UserRegistration() {
         console.log(error)
         if(error.length === 0){
             let data={...formdata,"userTypeId":0,status: "Active"}
-            fetch(`http://localhost:3001/user?q=${data.Email}`,{
+            fetch(`http://localhost:5000/user?q=${data.Email}`,{
                 method:"GET",
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -135,7 +135,7 @@ function UserRegistration() {
             }).then(res=>res.json()).then(res =>{
                 console.log(res)
                 if(res.length===0){
-                    fetch("http://localhost:3001/user",{
+                    fetch("http://localhost:5000/user",{
                         method:"POST",
                         headers: {
                             "Content-type": "application/json; charset=UTF-8"
@@ -145,7 +145,7 @@ function UserRegistration() {
                     }).then(res=>res.json()).then(res =>{
                         console.log(res)
                         console.log(JSON.stringify(data))
-                        history.push("/upcoming");
+                        history.push("./upcoming");
                     }).catch(e=>console.log(e))
                 }
                 else {
@@ -232,7 +232,8 @@ function UserRegistration() {
                 {!checked && alertt.showAlert && <Alert severity={alertt.status} style={{width:"268px",height:"35px",marginTop:"10px"}}>Please Accept terms and condtions</Alert>}
                 <CustomButton type="submit" >Register</CustomButton>
                 <p style={{color:"#A0A0A0"}}>Already registered? 
-                <a href="#" style={{color:"#1D7A8C"}} onClick={e => {document.body.classList.toggle('login-open')
+                <a href="/" style={{color:"#1D7A8C"}} 
+                onClick={e => {document.body.classList.toggle('login-open')
                             document.body.classList.remove('forgot-open')}}>Login now</a></p>
                 </form>
             </div>

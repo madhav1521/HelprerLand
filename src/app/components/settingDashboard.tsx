@@ -195,7 +195,7 @@ function SettingDashboard() {
     
     useEffect(()=>{
         let user=JSON.parse(localStorage.getItem('user')|| '{}')
-        fetch(`http://localhost:3001/user?q=${user.Email}`,{
+        fetch(`http://localhost:5000/user?q=${user.Email}`,{
         method:"GET",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
@@ -206,7 +206,7 @@ function SettingDashboard() {
                 let a=res[0].id
                 console.log("UID:"+UID)
                 setUID(a)
-                fetch(`http://localhost:3001/Address?userId=${a}`,{
+                fetch(`http://localhost:5000/Address?userId=${a}`,{
                 method:"GET",
                 headers: {
                    "Content-type": "application/json; charset=UTF-8"
@@ -337,7 +337,7 @@ function SettingDashboard() {
                         </Select>
                         <CustomButton onClick={()=>
                         {
-                            fetch(`http://localhost:3001/user/${USERS .id}`,{
+                            fetch(`http://localhost:5000/user/${USERS .id}`,{
                             method:"PUT",
                             headers: {
                                 "Content-type": "application/json; charset=UTF-8"
@@ -381,7 +381,7 @@ function SettingDashboard() {
                                                setdummy(i)
                                            }}></img>
                                            <img src={delete1} style={{width:"30px",height:"30px"}} onClick={()=>{
-                                               fetch(`http://localhost:3001/Address/${i.id}`,{
+                                               fetch(`http://localhost:5000/Address/${i.id}`,{
                                                 method:"DELETE"
                                                 }).then(res=>res.json()).then(res =>{
                                                     console.log(res)
@@ -444,7 +444,7 @@ function SettingDashboard() {
                             </Grid>
                             </div>
                             <CustomButton style={{width:"575px"}} onClick={()=>{
-                                 fetch(`http://localhost:3001/Address/${dummy.id}`,{
+                                 fetch(`http://localhost:5000/Address/${dummy.id}`,{
                                     method:"PUT",
                                     headers: {
                                         "Content-type": "application/json; charset=UTF-8"
@@ -517,7 +517,7 @@ function SettingDashboard() {
                                 setdisplayerror(true)
                                 if(NewAdress.StreetName!="" && NewAdress.HouseNumber!="" && NewAdress.PostalCode!="" && NewAdress.City!="" && NewAdress.MobileNumber!="" )
                                 {
-                                    fetch("http://localhost:3001/Address",{
+                                    fetch("http://localhost:5000/Address",{
                                         method:"POST",
                                         headers: {
                                             "Content-type": "application/json; charset=UTF-8"
@@ -559,7 +559,7 @@ function SettingDashboard() {
                             setupdate(!update)
                             setdisplayerror1(true)
                             if(passwords.Oldpass!="" && passwords.Newpass!="" && passwords.Confirmpass!=""){
-                                fetch(`http://localhost:3001/user?q=${UID}`,{
+                                fetch(`http://localhost:5000/user?q=${UID}`,{
                                     method:"GET",
                                     headers: {
                                         "Content-type": "application/json; charset=UTF-8"
@@ -570,7 +570,7 @@ function SettingDashboard() {
                                             {
                                                 let data={Password:passwords.Newpass,ConfirmPassword:passwords.Newpass}
                                                 console.log("data:"+data)
-                                                fetch(`http://localhost:3001/user/${UID}`,{
+                                                fetch(`http://localhost:5000/user/${UID}`,{
                                                     method:"PATCH",
                                                     headers: {
                                                         "Content-type": "application/json; charset=UTF-8"

@@ -222,7 +222,7 @@ function UpcomingSetting(props:any) {
     
     useEffect(()=>{
         let user=JSON.parse(localStorage.getItem('user')|| '{}')
-        fetch(`http://localhost:3001/user?q=${user.Email}`,{
+        fetch(`http://localhost:5000/user?q=${user.Email}`,{
         method:"GET",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
@@ -234,7 +234,7 @@ function UpcomingSetting(props:any) {
                 let a=res[0].id
                 console.log("UID:"+UID)
                 setUID(a)
-                fetch(`http://localhost:3001/Address?userId=${a}`,{
+                fetch(`http://localhost:5000/Address?userId=${a}`,{
                 method:"GET",
                 headers: {
                    "Content-type": "application/json; charset=UTF-8"
@@ -469,7 +469,7 @@ function UpcomingSetting(props:any) {
                             if(USERS.StreetName!="" && USERS.HouseNumber && USERS.avtar && USERS.PostalCode && USERS.City && USERS.MobileNumber && USERS.Gender)
                             {
                                 
-                                fetch(`http://localhost:3001/user/${USERS.id}`,{
+                                fetch(`http://localhost:5000/user/${USERS.id}`,{
                                 method:"PUT",
                                 headers: {
                                     "Content-type": "application/json; charset=UTF-8"
@@ -506,7 +506,7 @@ function UpcomingSetting(props:any) {
                             setupdate(!update)
                             setdisplayerror1(true)
                             if(passwords.Oldpass!="" && passwords.Newpass!="" && passwords.Confirmpass!=""){
-                                fetch(`http://localhost:3001/user?q=${UID}`,{
+                                fetch(`http://localhost:5000/user?q=${UID}`,{
                                     method:"GET",
                                     headers: {
                                         "Content-type": "application/json; charset=UTF-8"
@@ -517,7 +517,7 @@ function UpcomingSetting(props:any) {
                                             {
                                                 let data={Password:passwords.Newpass,ConfirmPassword:passwords.Newpass}
                                                 console.log("data:"+data)
-                                                fetch(`http://localhost:3001/user/${UID}`,{
+                                                fetch(`http://localhost:5000/user/${UID}`,{
                                                     method:"PATCH",
                                                     headers: {
                                                         "Content-type": "application/json; charset=UTF-8"

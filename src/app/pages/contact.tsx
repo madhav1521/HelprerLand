@@ -188,7 +188,7 @@ function Contactpage() {
             <hr style={{width:"1140px",border:"0",borderTop:"1px solid #CCCCCC",display:"block",height:"1px",margin:"50px auto 80px"}}></hr>
             <form className="contact-form" action="https://formspree.io/f/mlekovbg" method="POST" onSubmit={sendemail}>
                 <h1>Get in touch with us</h1>
-                <Box component="form"  sx={{'& .MuiTextField-root': {margin:"0 14px 15px 0"}}} style={{display:"flex",flexWrap:"wrap"}} >
+                <Box component="form" action="https://formspree.io/f/mlekovbg" method="POST"  sx={{'& .MuiTextField-root': {margin:"0 14px 15px 0"}}} style={{display:"flex",flexWrap:"wrap"}} >
                 <Grid container >
                     <Grid item lg={6} xs={6} md={6}>
                         <CustomTextField2  placeholder="First name" name="Firstname" value={toSend.Firstname} onChange={handleChange} />

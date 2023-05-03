@@ -119,7 +119,7 @@ function BecomeAPropage() {
         console.log(error)
         if(error.length == 0){
             let data={...formdata,"userTypeId":1}
-            fetch("http://localhost:3001/user",{
+            fetch("http://localhost:5000/user",{
                 method:"POST",
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"

@@ -185,14 +185,14 @@ function HTable() {
   useEffect(()=>{
     let user=JSON.parse(localStorage.getItem('user')|| '{}')
 
-    fetch(`http://localhost:3001/user?q=${user.Email}`,{
+    fetch(`http://localhost:5000/user?q=${user.Email}`,{
     method:"GET",
     headers: {
         "Content-type": "application/json; charset=UTF-8"
       },
     }).then(res=>res.json()).then(res =>{
                 let a=res[0].id
-                fetch(`http://localhost:3001/Bookservice?status=${"Completed"}&status=${"Cancelled"}&userId=${a}`,{
+                fetch(`http://localhost:5000/Bookservice?status=${"Completed"}&status=${"Cancelled"}&userId=${a}`,{
                 method:"GET",
                 headers: {
                    "Content-type": "application/json; charset=UTF-8"
@@ -499,7 +499,7 @@ function HTable() {
                   }} value={comment}></CustomTextField1>
                   <CButton1 onClick={()=>{
                     let a={Rating:(value+value1+value2)/3,SPcommnet:comment}
-                    fetch(`http://localhost:3001/Bookservice/${data.id}`,{
+                    fetch(`http://localhost:5000/Bookservice/${data.id}`,{
                     method:"PATCH",
                     headers: {
                       "Content-type": "application/json; charset=UTF-8"

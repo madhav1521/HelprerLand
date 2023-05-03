@@ -134,7 +134,7 @@ function MTable() {
   const handleClose = () => setOpen(false);
   useEffect(()=>{
         let user=JSON.parse(localStorage.getItem('user')|| '{}')
-        fetch(`http://localhost:3001/Bookservice?status=${"Accepted"}&SPemail=${user.Email}`,{
+        fetch(`http://localhost:5000/Bookservice?status=${"Accepted"}&SPemail=${user.Email}`,{
         method:"GET",
         headers: {
            "Content-type": "application/json; charset=UTF-8"
@@ -234,7 +234,7 @@ function MTable() {
               <TableCell>
               <Typography><CButton onClick={()=>{
                         let a={status:"Cancelled"}
-                        fetch(`http://localhost:3001/Bookservice/${row.id}`,{
+                        fetch(`http://localhost:5000/Bookservice/${row.id}`,{
                         method:"PATCH",
                         headers: {
                           "Content-type": "application/json; charset=UTF-8"
@@ -281,7 +281,7 @@ function MTable() {
                     <div style={{marginTop:"10px"}}>
                       <CButton onClick={()=>{
                         let a={status:"Cancelled"}
-                        fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                        fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                         method:"PATCH",
                         headers: {
                           "Content-type": "application/json; charset=UTF-8"
@@ -296,7 +296,7 @@ function MTable() {
                       }}>cancel</CButton>
                       <CButton style={{backgroundColor:"#1D7A8C",marginLeft:"10px",width:"100px"}} onClick={()=>{
                           let a={status:"Completed"}
-                          fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                          fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                           method:"PATCH",
                           headers: {
                             "Content-type": "application/json; charset=UTF-8"

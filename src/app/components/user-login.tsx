@@ -46,7 +46,7 @@ export default function UserLogin(props:any) {
 
 function Logout(){
   localStorage.clear();
-  history.push("/");
+  history.push("./");
 }
   return (
     <div>

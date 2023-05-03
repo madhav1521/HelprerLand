@@ -228,7 +228,7 @@ const reason=(e:any)=>{
  
   useEffect(()=>{
 
-    fetch(`http://localhost:3001/Bookservice`,{
+    fetch(`http://localhost:5000/Bookservice`,{
     method:"GET",
     headers: {
        "Content-type": "application/json; charset=UTF-8"
@@ -466,7 +466,7 @@ const reason=(e:any)=>{
                           let c=moment(time!).format('DD-MM-YYYY')
                           let b=moment(time!).format('h:mm A')
                           let add={ServiceAddress:a,datetime:time,Date:c,Time:b,EMPNotes:data.EMPNotes,rescheduleservice:data.rescheduleservice}
-                            fetch(`http://localhost:3001/Bookservice/${data.id}`,{
+                            fetch(`http://localhost:5000/Bookservice/${data.id}`,{
                               method:"PATCH",
                               headers: {"Content-type": "application/json; charset=UTF-8"},
                               body:JSON.stringify(add)

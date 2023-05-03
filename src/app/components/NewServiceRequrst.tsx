@@ -232,21 +232,21 @@ function Newservice() {
   
   useEffect(()=>{
         let user=JSON.parse(localStorage.getItem('user')|| '{}')
-        fetch(`http://localhost:3001/user?q=${user.Email}`,{
+        fetch(`http://localhost:5000/user?q=${user.Email}`,{
         method:"GET",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
           },
         }).then(res=>res.json()).then(res =>{
           
-            fetch(`http://localhost:3001/Block-user?Targetid=${res[0].id}&Blocked=${true}`,{
+            fetch(`http://localhost:5000/Block-user?Targetid=${res[0].id}&Blocked=${true}`,{
             method:"GET",
             headers: {
               "Content-type": "application/json; charset=UTF-8"
             },
             }).then(blk=>blk.json()).then(blk =>
             {
-              fetch(`http://localhost:3001/Bookservice?status=${""}&Postalcode=${res[0].PostalCode}`,{
+              fetch(`http://localhost:5000/Bookservice?status=${""}&Postalcode=${res[0].PostalCode}`,{
               method:"GET",
               headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -422,7 +422,7 @@ function Newservice() {
                 <CButton style={{backgroundColor:"#1D7A8C"}} onClick={()=>{
                     let user=JSON.parse(localStorage.getItem('user')|| '{}')
                           
-                    fetch(`http://localhost:3001/user?q=${user.Email}`,{
+                    fetch(`http://localhost:5000/user?q=${user.Email}`,{
                     method:"GET",
                     headers: {
                         "Content-type": "application/json; charset=UTF-8"
@@ -431,7 +431,7 @@ function Newservice() {
                         console.log(res)
                         let SPname=res[0].FirstName + " "+ res[0].LastName;
                         let a={status:"Accepted",SPemail:user.Email,SPname:SPname}
-                        fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                        fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                         method:"PATCH",
                         headers: {
                           "Content-type": "application/json; charset=UTF-8"
@@ -485,7 +485,7 @@ function Newservice() {
                       <CButton style={{backgroundColor:"#1D7A8C"}} onClick={()=>{
                           let user=JSON.parse(localStorage.getItem('user')|| '{}')
                           
-                          fetch(`http://localhost:3001/user?q=${user.Email}`,{
+                          fetch(`http://localhost:5000/user?q=${user.Email}`,{
                           method:"GET",
                           headers: {
                               "Content-type": "application/json; charset=UTF-8"
@@ -494,7 +494,7 @@ function Newservice() {
                               console.log(res)
                               let SPname=res[0].FirstName + " "+ res[0].LastName;
                               let a={status:"Accepted",SPemail:user.Email,SPname:SPname}
-                              fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                              fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                               method:"PATCH",
                               headers: {
                                 "Content-type": "application/json; charset=UTF-8"
@@ -511,7 +511,7 @@ function Newservice() {
                       <CButton style={{marginLeft:"10px"}} onClick={()=>{
                         let user=JSON.parse(localStorage.getItem('user')|| '{}')
                         let a={status:"Cancelled",SPemail:user.Email}
-                        fetch(`http://localhost:3001/Bookservice/${row.id}`,{
+                        fetch(`http://localhost:5000/Bookservice/${row.id}`,{
                         method:"PATCH",
                         headers: {
                           "Content-type": "application/json; charset=UTF-8"
@@ -543,7 +543,7 @@ function Newservice() {
                     <CButton1 style={{width:"100px",marginTop:"10px"}} onClick={()=>{
                       let user=JSON.parse(localStorage.getItem('user')|| '{}')
                       let a={status:"Cancelled",SPemail:user.Email}
-                      fetch(`http://localhost:3001/Bookservice/${row.id}`,{
+                      fetch(`http://localhost:5000/Bookservice/${row.id}`,{
                       method:"PATCH",
                       headers: {
                         "Content-type": "application/json; charset=UTF-8"
@@ -585,7 +585,7 @@ function Newservice() {
             {
                 let user=JSON.parse(localStorage.getItem('user')|| '{}')
                       
-                fetch(`http://localhost:3001/user?q=${user.Email}`,{
+                fetch(`http://localhost:5000/user?q=${user.Email}`,{
                 method:"GET",
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -593,7 +593,7 @@ function Newservice() {
                 }).then(res1=>res1.json()).then(res1 =>{
                     let SPname=res1[0].FirstName + " "+ res1[0].LastName;
                     let a={status:"Accepted",SPemail:user.Email,SPname:SPname}
-                    fetch(`http://localhost:3001/Bookservice?SPemail=${user.Email}&status=${"Accepted"}`,{
+                    fetch(`http://localhost:5000/Bookservice?SPemail=${user.Email}&status=${"Accepted"}`,{
                       method:"GET",
                       headers: {
                           "Content-type": "application/json; charset=UTF-8"
@@ -634,7 +634,7 @@ function Newservice() {
                       }
                       else
                       {
-                        fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                        fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                           method:"PATCH",
                           headers: {
                             "Content-type": "application/json; charset=UTF-8"
@@ -648,7 +648,7 @@ function Newservice() {
                       }
                     }
                   else{
-                    fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                    fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                       method:"PATCH",
                       headers: {
                         "Content-type": "application/json; charset=UTF-8"
@@ -664,7 +664,7 @@ function Newservice() {
                     }
                     else
                   {
-                    fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                    fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                       method:"PATCH",
                       headers: {
                         "Content-type": "application/json; charset=UTF-8"
@@ -718,7 +718,7 @@ function Newservice() {
                   <CButton style={{backgroundColor:"#1D7A8C"}} onClick={()=>{
                       let user=JSON.parse(localStorage.getItem('user')|| '{}')
                       
-                      fetch(`http://localhost:3001/user?q=${user.Email}`,{
+                      fetch(`http://localhost:5000/user?q=${user.Email}`,{
                       method:"GET",
                       headers: {
                           "Content-type": "application/json; charset=UTF-8"
@@ -727,7 +727,7 @@ function Newservice() {
                           // console.log(res1)
                           let SPname=res1 [0].FirstName + " "+ res1[0].LastName;
                           let a={status:"Accepted",SPemail:user.Email,SPname:SPname}
-                          fetch(`http://localhost:3001/Bookservice?SPemail=${user.Email}&status=${"Accepted"}`,{
+                          fetch(`http://localhost:5000/Bookservice?SPemail=${user.Email}&status=${"Accepted"}`,{
                             method:"GET",
                             headers: {
                                 "Content-type": "application/json; charset=UTF-8"
@@ -768,7 +768,7 @@ function Newservice() {
                               }
                               else
                               {
-                                fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                                fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                                   method:"PATCH",
                                   headers: {
                                     "Content-type": "application/json; charset=UTF-8"
@@ -782,7 +782,7 @@ function Newservice() {
                               }
                             }
                           else{
-                            fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                            fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                               method:"PATCH",
                               headers: {
                                 "Content-type": "application/json; charset=UTF-8"
@@ -798,7 +798,7 @@ function Newservice() {
                           }
                           else
                           {
-                            fetch(`http://localhost:3001/Bookservice/${USERS[index].id}`,{
+                            fetch(`http://localhost:5000/Bookservice/${USERS[index].id}`,{
                               method:"PATCH",
                               headers: {
                                 "Content-type": "application/json; charset=UTF-8"
@@ -819,7 +819,7 @@ function Newservice() {
                   <CButton style={{marginLeft:"10px"}} onClick={()=>{
                     let user=JSON.parse(localStorage.getItem('user')|| '{}')
                     let a={status:"Cancelled",SPemail:user.Email}
-                    fetch(`http://localhost:3001/Bookservice/${row.id}`,{
+                    fetch(`http://localhost:5000/Bookservice/${row.id}`,{
                     method:"PATCH",
                     headers: {
                       "Content-type": "application/json; charset=UTF-8"
@@ -851,7 +851,7 @@ function Newservice() {
                 <CButton1 style={{width:"100px",marginTop:"10px"}} onClick={()=>{
                   let user=JSON.parse(localStorage.getItem('user')|| '{}')
                   let a={status:"Cancelled",SPemail:user.Email}
-                  fetch(`http://localhost:3001/Bookservice/${row.id}`,{
+                  fetch(`http://localhost:5000/Bookservice/${row.id}`,{
                   method:"PATCH",
                   headers: {
                     "Content-type": "application/json; charset=UTF-8"

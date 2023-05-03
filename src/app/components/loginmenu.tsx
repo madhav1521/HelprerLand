@@ -107,7 +107,7 @@ function Login(props:any) {
             const submitform1 = (e:any) =>{
                 e.preventDefault();
                 let a={Email:resetEmail}
-                fetch(`http://localhost:3001/account/forgotpassword/`,{
+                fetch(`http://localhost:5000/account/forgotpassword/`,{
                     method:"POST",
                     headers: {
                         "Content-type": "application/json; charset=UTF-8"
@@ -129,7 +129,7 @@ function Login(props:any) {
                 console.log(error)
                 if(error.length == 0){
                     let data={...formdata}
-                    fetch(`http://localhost:3001/user?q=${data.Email}`,{
+                    fetch(`http://localhost:5000s/user?q=${data.Email}`,{
                         method:"GET",
                         headers: {
                             "Content-type": "application/json; charset=UTF-8"

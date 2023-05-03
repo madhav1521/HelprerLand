@@ -34,7 +34,7 @@ function Navbar() {
             <nav className={navbar ? 'navbar-faq active' : 'navbar-faq'}>
                 <img src={logolarge} alt="logo"/>
                 <ul className="topnav" >     
-                    <Link to="/bookservice"><li><Button className="cleaner-btn">Book a cleaner</Button></li></Link>
+                    <Link to="/bookservice"><li><Button className="cleaner-btn">Book a worker</Button></li></Link>
                     <li><Link to="/prices" style={{margin:"0px"}}>Prices & services</Link></li>
                     {/* <li><Link to="#">Warranty</Link></li> */}
                     <li><Link to="/about">Blog</Link></li>

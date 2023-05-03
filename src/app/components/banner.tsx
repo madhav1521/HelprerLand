@@ -31,7 +31,7 @@ function Banner() {
                     </li>
                 </ul>
                 <div className="btn1">
-                    <Button onClick={login} style={{textTransform:'capitalize'}}> Let’s Book a Cleaner</Button>
+                    <Button onClick={login} style={{textTransform:'capitalize'}}> Let’s Book a Work</Button>
                 </div>
                 
                 <div className="symbol">

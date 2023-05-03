@@ -58,7 +58,7 @@ function UpcomingBlock() {
   const [call,setcall]=useState(false)
   useEffect(()=>{
     let user=JSON.parse(localStorage.getItem('user')|| '{}')
-    fetch(`http://localhost:3001/Bookservice?SPemail=${user.Email}`,{
+    fetch(`http://localhost:5000/Bookservice?SPemail=${user.Email}`,{
       method:"GET",
       headers: {
          "Content-type": "application/json; charset=UTF-8"
@@ -70,7 +70,7 @@ function UpcomingBlock() {
           console.log("called")
       }).catch(e=>console.log(e))
 
-      fetch(`http://localhost:3001/Block-user`,{
+      fetch(`http://localhost:5000/Block-user`,{
       method:"GET",
       headers: {
          "Content-type": "application/json; charset=UTF-8"
@@ -105,7 +105,7 @@ function UpcomingBlock() {
                           bobj.Blocked==true?
                             <CButton onClick={()=>{
                               let user=JSON.parse(localStorage.getItem('user')|| '{}')
-                              fetch(`http://localhost:3001/user?q=${user.Email}`,{
+                              fetch(`http://localhost:5000/user?q=${user.Email}`,{
                                 method:"GET",
                                 headers: {
                                    "Content-type": "application/json; charset=UTF-8"
@@ -114,7 +114,7 @@ function UpcomingBlock() {
                                 {   
                                     let data={Blocked:false}
                                     console.log("called",res)
-                                    fetch(`http://localhost:3001/Block-user/${bobj.id}`,{
+                                    fetch(`http://localhost:5000/Block-user/${bobj.id}`,{
                                     method:"PATCH",
                                     headers: {
                                        "Content-type": "application/json; charset=UTF-8"
@@ -132,7 +132,7 @@ function UpcomingBlock() {
                           :
                             <CButton onClick={()=>{
                                 let user=JSON.parse(localStorage.getItem('user')|| '{}')
-                                fetch(`http://localhost:3001/user?q=${user.Email}`,{
+                                fetch(`http://localhost:5000/user?q=${user.Email}`,{
                                   method:"GET",
                                   headers: {
                                      "Content-type": "application/json; charset=UTF-8"
@@ -141,7 +141,7 @@ function UpcomingBlock() {
                                   {   
                                       let data={Blocked:true}
                                       console.log("called",res)
-                                      fetch(`http://localhost:3001/Block-user/${bobj.id}`,{
+                                      fetch(`http://localhost:5000/Block-user/${bobj.id}`,{
                                       method:"PATCH",
                                       headers: {
                                          "Content-type": "application/json; charset=UTF-8"
@@ -159,7 +159,7 @@ function UpcomingBlock() {
                         :
                           <CButton onClick={()=>{
                               let user=JSON.parse(localStorage.getItem('user')|| '{}')
-                              fetch(`http://localhost:3001/user?q=${user.Email}`,{
+                              fetch(`http://localhost:5000/user?q=${user.Email}`,{
                                 method:"GET",
                                 headers: {
                                    "Content-type": "application/json; charset=UTF-8"
@@ -168,7 +168,7 @@ function UpcomingBlock() {
                                 {   
                                     let data={Userid:i.userId,Targetid:res[0].id,Blocked:true,userEmail:i.Email}
                                     console.log("called",res)
-                                    fetch(`http://localhost:3001/Block-user`,{
+                                    fetch(`http://localhost:5000/Block-user`,{
                                     method:"POST",
                                     headers: {
                                        "Content-type": "application/json; charset=UTF-8"
