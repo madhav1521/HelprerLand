@@ -89,6 +89,60 @@
       "userTypeId": 0,
       "status": "Active",
       "id": 7
+    },
+    {
+      "FirstName": "Madhav",
+      "LastName": "Jajal",
+      "Email": "madhavjajal1521@gmail.com",
+      "Mobile": "+919408866398",
+      "Password": "123",
+      "ConfirmPassword": "123",
+      "userTypeId": 0,
+      "status": "Active",
+      "id": 8
+    },
+    {
+      "FirstName": "Madhav",
+      "LastName": "Jajal",
+      "Email": "madhavjajal1509@gmail.com",
+      "Mobile": "+919408866398",
+      "Password": "147",
+      "ConfirmPassword": "147",
+      "userTypeId": 0,
+      "status": "Active",
+      "id": 9
+    },
+    {
+      "Email": "madhavjajal1509@gmail.com",
+      "id": 10
+    },
+    {
+      "Email": "madhavjajal1509@gmail.com",
+      "id": 11
+    },
+    {
+      "Email": "madhavjajal1509@gmail.com",
+      "id": 12
+    },
+    {
+      "Email": "madhavjajal1509@gmail.com",
+      "id": 13
+    },
+    {
+      "Email": "madhavjajal1509@gmail.com",
+      "id": 14
+    },
+    {
+      "Email": "madhavjajal1509@gmail.com",
+      "id": 15
+    },
+    {
+      "Email": "madhavjajal1509@gmail.com",
+      "id": 16
+    },
+    {
+      "Email": "madhavjajal1521@gmail.com",
+      "id": 17
     }
   ],
   "postalCode": [
